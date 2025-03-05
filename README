@@ -53,7 +53,7 @@ cd /ruta/del/proyecto
   ```
 mvn clean compile
   ```
-* * Ejecuta la clase RunCucumberTest
+* * Ejecuta la clase Runner
   ```
 mvn clean test -Dtest=Runner
   ```
