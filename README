@@ -1,0 +1,85 @@
+# README - EJERCICIO 3 Tratamiento de datos en APIs
+
+## Descripción
+Este proyecto realiza una prueba automatizada a nnivel de APIs en el que para ello usamos karate. El prpyecto cumple con los 3 puntos mencionados en el ejercicio3:
+* * Pet: representamos cada mascota con id y name
+* * PetData:lista mediante una función los nombres de las mascotas que se hayan vendido en formato {id, name}
+* * Runner: ejecuta pruebas Karate usando JUnit5
+* * pet.feature: API Petstore. Obtiene mascotas vendidas (sold), procesa sus nombres y cuenta cuántas tienen el mismo nombre.
+* * user.feature: API Users. Crear usuario y recuperarlo
+* * karate-config.js: funcion que simplifica las pruebas de Karate haciendo los escenarios más fáciles de mantener.
+* * logback-test.xml: archivo para configurar los logs de las pruebas en Karate
+
+
+## Requisitos Previos
+
+1. **Java**: Asegúrate de tener Java JDK 11 o superior instalado.
+   - Verifica la instalación ejecutando:
+     ```
+     java -version
+     ```
+2. **Maven**: Asegúrate de tener Apache Maven instalado (en nuestro caso hemos usado version 3.9.9).
+   - Verifica la instalación ejecutando:
+     ```
+     mvn -version
+     ```
+3. **Dependencias del Proyecto**:
+   - El proyecto utiliza el fuchero pom.xml en el que tratamos las dependencias.
+
+## Instalación y Configuración
+
+1. Clona el repositorio o descarga los archivos del proyecto.
+  ```
+git clone https://github.com/tu_usuario/tu_repositorio.git
+  ```
+  Reemplaza tu_usuario por tu usario Git y tu_repositorio con el valor de tu repositorio (en esta caso seria https://github.com/angvazcar/Ejercicio3.git)
+
+2. Abrir el proyecto descargado con IntelliJ
+* * Abre IntelliJ IDEA
+* * En la pantalla de inicio, selecciona "Open" y navega hasta la carpeta donde clonaste el repositorio en el paso previo
+* * Espera a que IntelliJ detecte y configure automáticamente el proyecto.
+
+3. Ejecutar el proyecto desde IntelliJ
+* * Abre la clase RunCucumberTest ubicada en src/test/java/com/example/Runner
+* * Haz click derecho dentro del archivo y selecciona "Run 'Runner"
+* * IntelliJ compilará el código y ejecutará la prueba. Los resultados podrán visualizarse en la consola o en los reports de Karate
+
+5. Ejecutar el proyecto por comandos
+* * Abre iTerm o cmd y navega hasta la carpeta del proyecto
+  ```
+cd /ruta/del/proyecto
+  ```
+* * Compila el proyecto con Maven
+  ```
+mvn clean compile
+  ```
+* * Ejecuta la clase RunCucumberTest
+  ```
+mvn clean test -Dtest=Runner
+  ```
+* * La prueba se ejecutará y los resultados podrán visualizarse en la consola o en los reports de Karate
+
+6. Resultados
+Si la prueba se ejecuta correctamente estos son los resultados esperados:
+
+****************************
+
+20:24:07.222 [main] INFO com.intuit.karate - [print] Lista de mascotas vendidas: [{id: 9223372036854746484, name: "Doggy"}, {id: 1190, name: "valueimplcat"}, {id: 9223372036854746586, name: "Doggy"}, {id: 9223372036854775466, name: "𯶻£¡Ü:Ù1^úõ񀌱󭠱"}, {id: 3345, name: "IQRUJSdFGt"}, {id: 456789, name: "puppy2"}, {id: 972, name: "sqVTu"}, {id: 9, name: "King Kong"}, {id: 9223372036854775755, name: "󘳨|ý"}, {id: 9223372036854775756, name: "||ý"}, {id: 1323, name: "yvHWdGGtoOXsdUFNe"}, {id: 697377, name: "puppy2"}, {id: 857585, name: "puppy2"}, {id: 386190, name: "puppy2"}, {id: 758280, name: "puppy2"}, {id: 981094, name: "puppy2"}, {id: 695424, name: "puppy2"}, {id: 9999999, name: "Ghost"}, {id: 999999999999999, name: "Ghost"}, {id: 7, name: "Guantes"}, {id: 7574746, name: "Hardy"}, {id: 401, name: "Maxfacor"}, {id: 10001, name: "bear"}, {id: 56331470, name: "doggie"}, {id: 3708840, name: "doggie"}, {id: 3903023, name: "doggie"}, {id: 24093935, name: "doggie"}, {id: 566, name: "Mysh"}, {id: 1, name: "dog"}]
+20:22:15.200 [main] INFO com.intuit.karate - [print] Lista de mascotas vendidas con el mismo nombre:{"Maxfacor":1,"yvHWdGGtoOXsdUFNe":1,"Mysh":1,"Hardy":1,"valueimplcat":1,"Guantes":1,"𯶻£¡\u0095Ü:Ù1\u001B^úõ񀌱󭠱\u0005":1,"sqVTu":1,"IQRUJSdFGt":1,"Ghost":2,"doggie":4,"King Kong":1,"puppy2":7,"bear":1,"Doggy":2,"󘳨|ý":1,"||ý":1}
+---------------------------------------------------------
+feature: classpath:com/example/user.feature
+scenarios:  2 | passed:  2 | failed:  0 | time: 0,6911
+---------------------------------------------------------
+
+Karate version: 1.3.0
+======================================================
+elapsed:   3,37 | threads:    1 | thread time: 2,49
+features:     2 | skipped:    0 | efficiency: 0,74
+scenarios:    6 | passed:     6 | failed: 0
+======================================================
+HTML report: (paste into browser to view) | Karate version: 1.3.0
+file:///Users/angelesbuild38/Desktop/Ejercicio3okConKarate/target/karate-reports/karate-summary.html
+===================================================================
+**********
+
+
